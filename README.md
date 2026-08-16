@@ -28,3 +28,28 @@ Tiny68K has two unusual features:
 
 - The entire 16-megabyte memory space of 68000 (except the top 32Kbyte of I/O space) is filled with RAM,
 - The boot software residesin a 32Kbyte serial flash that is copied into the lowest 32Kbyte of the DRAM when powered up or with a reset. The RAM-resident boot software can be modified just like any data in RAM but is overwritten on the next power cycle or with a reset.
+
+### Descriptions
+Low cost without sacrificing performance is the design goall of Tiny68K. Cost control is achieved by:
+
+- Two-layer PC board in 100mm x 100mm format. Many board manufacturers only charge 50 cents per board in quantity of 10 in this format,
+- Memory in the form of surplused 72-pin SIMM 16-megabyte DRAM modules. Such modules can be purchased for $2-3 each on eBay,
+- Low cost 5-Volt CPLD, Altera EPM7128, that is about $2-3 each from China,
+- Use low-cost serial flash memory as the boot memory,
+- Interface via pc board edge connector to a low-cost 44-pin IDE-CF module,
+- No on-board RS232 transceiver because most USB-based serial port modules operate at the TTL level.
+  
+Good performance is maintained by:
+
+- 16-bit wide data bus,
+- 16-megabyte SIMM72 DRAM operating at zero wait state (at 8MHz system clock),
+- Fast serial flash loads monitor in 0.6 second after a reset or power on,
+- 16-bit wide bus-connected IDE interface operating with zero wait state at 8MHz,
+- Hidden CAS-before-RAS refresh cycle with no software overhead.
+  
+Memory map
+
+- RAM is from 0x0 to 0xFF7FFF,
+- Serial Flash is from 0xFFD000-0xFFDFFF
+- IDE-CF is from 0xFFE000-0xFFEFFF
+- 68681 DUART is from 0xFFF000-0xFFFFFF
