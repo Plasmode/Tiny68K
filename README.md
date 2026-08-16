@@ -56,9 +56,9 @@ Memory map
 
 ### Design Files
 
-- schematic, the schematic and board layout tools are IVEX's WinBoard and WinDraft (ver 2.05)
+- [schematic](tiny68k_rev2_scm.pdf), the schematic and board layout tools are IVEX's WinBoard and WinDraft (ver 2.05)
 - [gerber photo plots](tiny68k_r2_gerber.zip), pc boards were manufactured by SeeedStudio
 - Part list
-- Altera EPM7128 design files. Designs are created in Quartus 8.1, should be compatible with later version of Quartus. Designs are entirely in schematics. Schematic in PDF format. Programming binary in .pof format.
+- Altera [EPM7128 design files](tiny68k_rev2_CPLD_rtc_en_0_wait.zip). Designs are created in Quartus 8.1, should be compatible with later version of Quartus. Designs are entirely in schematics. [CPLD schematic in PDF](tiny68k_rev2_cpld_PDFschematic_rtc_en_0_wait.pdf) format. [Programming binary](tiny68k_rev2_cpld_program_binary.zip) in .pof format.
 - Tiny68K Monitor debugger. The software is developed in the EASy68K tool chain. File with .bin extension is the programming binary for serial EEPROM programmer (CH341).
 - 
